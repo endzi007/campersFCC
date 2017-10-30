@@ -1,0 +1,41 @@
+$primaryColor: green;
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.5em;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80vw;
+  margin-left: 10vw;
+}
+
+td{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+tr{
+  &:nth-child(even){
+    background: lightgray;
+  }
+}
+
+th{
+  @extend td;
+  background: green;
+  color: white;
+}
+img{
+  max-width: 50px;
+}
+a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+  }
+}
