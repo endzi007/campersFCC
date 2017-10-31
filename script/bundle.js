@@ -1651,9 +1651,13 @@ var _loadApp = __webpack_require__(39);
 
 var _loadApp2 = _interopRequireDefault(_loadApp);
 
+var _footer = __webpack_require__(61);
+
+var _footer2 = _interopRequireDefault(_footer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-__webpack_require__(61);
+__webpack_require__(62);
 
 _reactDom2.default.render(_react2.default.createElement(
     'div',
@@ -1661,10 +1665,10 @@ _reactDom2.default.render(_react2.default.createElement(
     _react2.default.createElement(
         'h1',
         null,
-        'Free Code Camp project - Campers'
+        'Campers Leaderboard'
     ),
-    _react2.default.createElement('i', { 'class': 'fa fa-free-code-camp', 'aria-hidden': 'true' }),
-    _react2.default.createElement(_loadApp2.default, { title: 'Table component' })
+    _react2.default.createElement(_loadApp2.default, { title: 'Table component' }),
+    _react2.default.createElement(_footer2.default, null)
 ), document.getElementById("root"));
 
 /***/ }),
@@ -33290,10 +33294,72 @@ module.exports = function spread(callback) {
 /* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Footer = function (_React$Component) {
+    _inherits(Footer, _React$Component);
+
+    function Footer() {
+        _classCallCheck(this, Footer);
+
+        return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+    }
+
+    _createClass(Footer, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "footer" },
+                "Built by ",
+                _react2.default.createElement(
+                    "a",
+                    { href: "https://codepen.io/endzi007/" },
+                    "endzi 007"
+                ),
+                "-as a ",
+                _react2.default.createElement(
+                    "a",
+                    { id: "fcc", href: "https://www.freecodecamp.org" },
+                    "Free Code Camp"
+                ),
+                " project"
+            );
+        }
+    }]);
+
+    return Footer;
+}(_react2.default.Component);
+
+exports.default = Footer;
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(62);
+var content = __webpack_require__(63);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -33301,7 +33367,7 @@ var transform;
 var options = {"hmr":true}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(64)(content, options);
+var update = __webpack_require__(65)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -33318,21 +33384,21 @@ if(false) {
 }
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(63)(undefined);
+exports = module.exports = __webpack_require__(64)(undefined);
 // imports
 
 
 // module
-exports.push([module.i, "body {\n  font-family: 'Josefin Sans', sans-serif;\n  font-size: 1.5em; }\n\n#root {\n  text-align: center; }\n\ntable {\n  font-family: arial, sans-serif;\n  border-collapse: collapse;\n  width: 80vw;\n  margin-left: 10vw; }\n\ntd, th {\n  border: 1px solid #dddddd;\n  text-align: left;\n  padding: 8px; }\n\ntr:nth-child(even) {\n  background: lightgray; }\n\nth {\n  background: green;\n  color: white; }\n\nimg {\n  max-width: 50px; }\n\na {\n  color: black;\n  font-weight: bold;\n  text-decoration: none; }\n  a:hover {\n    text-decoration: underline; }\n\n.active {\n  border-bottom: 2px solid red;\n  background: #00b300; }\n", ""]);
+exports.push([module.i, "body {\n  font-family: 'Josefin Sans', sans-serif;\n  font-size: 1.5em; }\n\n#root {\n  text-align: center; }\n\ntable {\n  font-family: arial, sans-serif;\n  border-collapse: collapse;\n  min-width: 60vw;\n  width: auto;\n  margin: 0 auto; }\n\ntd, th {\n  border: 1px solid #dddddd;\n  text-align: left;\n  padding: 8px; }\n  td:nth-child(1), th:nth-child(1) {\n    width: 35px; }\n  td:nth-child(2), th:nth-child(2) {\n    width: 50px; }\n\ntr:nth-child(even) {\n  background: lightgray; }\n\nth {\n  background: green;\n  color: white; }\n\nimg {\n  max-width: 50px; }\n\na {\n  color: black;\n  font-weight: bold;\n  text-decoration: none; }\n  a:hover {\n    text-decoration: underline; }\n\n.active {\n  border-bottom: 2px solid red;\n  background: #00b300; }\n\n.footer {\n  text-align: center;\n  padding-top: 20px; }\n  .footer a {\n    text-decoration: none;\n    font-style: italic;\n    color: green;\n    font-weight: bold; }\n    .footer a:hover {\n      text-decoration: underline; }\n\n#lastYear:hover {\n  cursor: pointer; }\n\n#recent:hover {\n  cursor: pointer; }\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports) {
 
 /*
@@ -33414,7 +33480,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -33470,7 +33536,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(65);
+var	fixUrls = __webpack_require__(66);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -33786,7 +33852,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports) {
 
 

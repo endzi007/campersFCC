@@ -11,14 +11,20 @@ body {
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 80vw;
-  margin-left: 10vw;
+    min-width: 60vw;
+    width: auto;
+    margin: 0 auto;
 }
-
 td{
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
+    &:nth-child(1){
+      width: 35px;
+    }
+    &:nth-child(2){
+      width: 50px;
+    }
 }
 tr{
   &:nth-child(even){
@@ -42,8 +48,30 @@ a {
     text-decoration: underline;
   }
 }
-
 .active{
   border-bottom: 2px solid red;
   background: lighten($primaryColor, 10%);
+}
+.footer{
+  text-align: center;
+  padding-top: 20px;
+  a {
+      text-decoration: none;
+      font-style: italic;
+      color: $primaryColor;
+      font-weight: bold;
+      &:hover{
+          text-decoration: underline;
+      }
+  }
+}
+#lastYear{
+  &:hover{
+    cursor: pointer;
+  }
+}
+#recent{
+  &:hover{
+    cursor: pointer;
+  }
 }
