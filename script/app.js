@@ -5,7 +5,8 @@ require('../styles/main.scss');
 
 ReactDOM.render(
     <div>
-        <h1>Hello from react </h1>
+        <h1>Free Code Camp project - Campers</h1>
+        <i class="fa fa-free-code-camp" aria-hidden="true"></i>
         <LoadApp title="Table component"/>
     </div>,
 

@@ -4,6 +4,9 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.5em;
 }
+#root{
+  text-align: center;
+}
 
 table {
     font-family: arial, sans-serif;
@@ -25,7 +28,7 @@ tr{
 
 th{
   @extend td;
-  background: green;
+  background: $primaryColor;
   color: white;
 }
 img{
@@ -38,4 +41,9 @@ a {
   &:hover{
     text-decoration: underline;
   }
+}
+
+.active{
+  border-bottom: 2px solid red;
+  background: lighten($primaryColor, 10%);
 }

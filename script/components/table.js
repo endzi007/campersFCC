@@ -1,17 +1,20 @@
 import React from 'react';
+import $ from "jquery";
 
 class Table extends React.Component{
     constructor(){
         super();
         this.state={
-            display: "dd",
-            columns: "loading.."
+            recent: "dd",
+            allTime: "loading.."
         }
         this.columns = "";
     }
     componentWillMount(){
         this.setState({
-            display: this.props.data.recent
+            recent: this.props.data.recent,
+            allTime: this.props.data.allTime,
+            display: "recent"
         });
     }
 
@@ -33,6 +36,21 @@ class Table extends React.Component{
     componentDidMount(){
         //this.setState= ({columns: this.makeTable()})
       }
+    handleClick(e){
+        let clickedId = e.target.id;
+        $(".headerCell").removeClass("active");
+        $("#"+clickedId).addClass("active");
+        if(clickedId === "recent"){
+            console.log(e.target);
+            this.setState({
+                display: "recent"
+            });
+        } else {
+            this.setState({
+                display: "allTime"
+            });
+        }
+    }
 
     render() {
         console.log(this.columns);
@@ -44,12 +62,12 @@ class Table extends React.Component{
                     <th className="headerCell numCol" id="autoNumber">Num</th>
                     <th className="headerCell picCol" id="userPicture">Picture</th>
                     <th className="headerCell userCol" id="userName">UserName</th>
-                    <th className="headerCell recCol" id="recent" >last 30 days</th>
-                    <th className="headerCell yearcol" id="lastYear" >last year</th>
+                    <th className="headerCell recCol active" id="recent" onClick={this.handleClick.bind(this)}>last 30 days</th>
+                    <th className="headerCell yearcol" id="lastYear" onClick={this.handleClick.bind(this)}>last year</th>
                 </tr>
                 </thead>
               <tbody>
-                {this.makeTable("display")}
+                {this.makeTable(this.state.display)}
               </tbody>
 
               </table>
